@@ -51,6 +51,7 @@ const App = () => {
               <CircleProgress progress = {0.8}
                   radius = {80}
                   strokeWidth = {20}
+                  duration = {3000}
                   strokeColor= "#2D578D"
                   fontSize = {30}>
               ></CircleProgress>

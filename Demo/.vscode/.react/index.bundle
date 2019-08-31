@@ -91617,6 +91617,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       progress: 0.8,
       radius: 80,
       strokeWidth: 20,
+      duration: 3000,
       strokeColor: "#2D578D",
       fontSize: 30,
       __source: {
@@ -91655,25 +91656,29 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/defineProperty"));
 
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
 
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+  var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/objectWithoutProperties"));
 
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/classCallCheck"));
 
-  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/createClass"));
 
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/inherits"));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/getPrototypeOf"));
 
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../node_modules/react-transform-hmr/lib/index.js"));
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "@babel/runtime/helpers/inherits"));
 
-  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "prop-types"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "react"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./../node_modules/react-transform-hmr/lib/index.js"));
 
-  var _AnimatedCircle = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./AnimatedCircle"));
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "prop-types"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[13], "react-native");
+
+  var _AnimatedCircle = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[14], "./AnimatedCircle"));
 
   var _class,
       _temp,
@@ -91744,17 +91749,18 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, {
       key: "render",
       value: function render() {
-        var progress = this.props.progress >= 1 ? 0.9999 : this.props.progress;
-        var fontSize = this.props.fontSize;
-        return _react.default.createElement(_AnimatedCircle.default, {
-          progress: progress,
-          radius: this.props.radius,
-          strokeWidth: this.props.strokeWidth,
+        var _this$props = this.props,
+            fontSize = _this$props.fontSize,
+            progress = _this$props.progress,
+            other = (0, _objectWithoutProperties2.default)(_this$props, ["fontSize", "progress"]);
+        var progress1 = this.props.progress >= 1 ? 0.9999 : this.props.progress;
+        return _react.default.createElement(_AnimatedCircle.default, (0, _extends2.default)({}, other, {
+          progress: progress1,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 36
           }
-        }, _react.default.createElement(_reactNative.Text, {
+        }), _react.default.createElement(_reactNative.Text, {
           style: {
             color: '#2C6FB7',
             fontSize: fontSize,
@@ -91762,7 +91768,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 40
           }
         }, this.state.count, _react.default.createElement(_reactNative.Text, {
           style: {
@@ -91771,7 +91777,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42
+            lineNumber: 41
           }
         }, "%")));
       }
@@ -91785,7 +91791,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = CircleProgress;
   exports.default = _default2;
-},551,[1,155,50,22,23,37,40,43,52,193,67,2,596],"src/CircleProgress.js");
+},551,[1,155,50,11,9,22,23,37,40,43,52,193,67,2,596],"src/CircleProgress.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -92463,7 +92469,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           duration: duration
         });
 
-        anim.start(this.props.animated);
+        anim.start(this.props.animatedCompelte);
         return anim;
       }
     }, {
@@ -92487,7 +92493,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     preValue: _propTypes.default.number,
     duration: _propTypes.default.number,
     easing: _propTypes.default.func,
-    animated: _propTypes.default.func
+    animatedCompelte: _propTypes.default.func
   }), _class.defaultProps = {
     duration: 2000,
     easing: _reactNative.Easing.out(_reactNative.Easing.ease),

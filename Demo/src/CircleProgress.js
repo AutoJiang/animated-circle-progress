@@ -31,12 +31,11 @@ export default class CircleProgress extends Component {
     }
 
     render(){  
-        let progress = this.props.progress >= 1 ? 0.9999: this.props.progress;
-        let fontSize = this.props.fontSize;
+        const {fontSize,progress,...other} = this.props;
+        let progress1 = this.props.progress >= 1 ? 0.9999: this.props.progress;
         return <AnimatedCircle 
-            progress = {progress}
-            radius =  {this.props.radius}
-            strokeWidth =  {this.props.strokeWidth}
+            {...other}
+            progress = {progress1}
             >
             <Text  style = {{color:'#2C6FB7',fontSize: fontSize, textAlign:'right'}}>{this.state.count}
                 <Text style = {{color:'#2C6FB7',fontSize: fontSize - 2}}>%</Text>
