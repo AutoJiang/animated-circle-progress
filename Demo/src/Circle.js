@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {View, ART,} from 'react-native';
+import {View, ART, Text} from 'react-native';
 const {Surface, Shape, Path, LinearGradient} = ART;
 
 export default class Circle extends Component {
@@ -31,7 +31,7 @@ export default class Circle extends Component {
                 <Shape d={this.getPath(progress ? progress : 0)} stroke = {strokeColor} strokeWidth={strokeWidth}/>
             </Surface>
             <View style = {{position: 'absolute',left: 0, top: 0, right: 0, bottom: 0,alignItems:'center',justifyContent:'center'}}>
-                {this.props.children}
+                <Text> {Math.round(progress*100)}%</Text>
             </View>
         </View>);
     }

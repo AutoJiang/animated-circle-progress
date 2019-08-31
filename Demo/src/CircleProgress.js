@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {View, ART, Text} from 'react-native';
 import AnimatedCircle from './AnimatedCircle'
-
+//效率低下，性能有问题的组件
 export default class CircleProgress extends Component {
     static propTypes = {
         ...AnimatedCircle.propTypes,
@@ -23,7 +23,7 @@ export default class CircleProgress extends Component {
                 this.state.count++;
                 this.setState({});
             }
-        },1)
+        },10)
     }
 
     componentDidMount(){

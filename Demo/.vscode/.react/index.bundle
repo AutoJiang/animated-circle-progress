@@ -91739,7 +91739,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
             _this2.setState({});
           }
-        }, 1);
+        }, 10);
       }
     }, {
       key: "componentDidMount",
@@ -92326,7 +92326,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             fileName: _jsxFileName,
             lineNumber: 33
           }
-        }, this.props.children));
+        }, _react.default.createElement(_reactNative.Text, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34
+          }
+        }, " ", Math.round(progress * 100), "%")));
       }
     }, {
       key: "getPath",
@@ -92459,6 +92464,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, {
       key: "animate",
       value: function animate(toVal, dur, ease) {
+        var _this3 = this;
+
         var toValue = toVal >= 0 ? toVal : this.props.progress;
         var duration = dur || this.props.duration;
         var easing = ease || this.props.easing;
@@ -92469,7 +92476,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           duration: duration
         });
 
-        anim.start(this.props.animatedCompelte);
+        setTimeout(function () {
+          anim.start(_this3.props.animatedCompelte);
+        }, 1000);
         return anim;
       }
     }, {
@@ -92483,7 +92492,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           progress: this.state.fillAnimation,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 61
+            lineNumber: 63
           }
         }));
       }

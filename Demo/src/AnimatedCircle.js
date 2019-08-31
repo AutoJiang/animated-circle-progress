@@ -46,13 +46,15 @@ export default class AnimatedCircle extends React.PureComponent {
         const toValue = toVal >= 0 ? toVal : this.props.progress;
         const duration = dur || this.props.duration;
         const easing = ease || this.props.easing;
-  
         const anim = Animated.timing(this.state.fillAnimation, {
             toValue,
             easing,
             duration,
         });
-        anim.start(this.props.animatedCompelte);
+        setTimeout(()=>{
+            anim.start(this.props.animatedCompelte);
+        },1000)
+        
         return anim;
     }
   
