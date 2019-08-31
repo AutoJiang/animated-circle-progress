@@ -7,7 +7,9 @@
  */
 
 import React, {Fragment} from 'react';
-import {AnimatedCircle} from './src/CircleProgress'
+import Circle from './src/Circle'
+import CircleProgress from './src/CircleProgress'
+import AnimatedCircle from './src/AnimatedCircle'
 import {
   SafeAreaView,
   StyleSheet,
@@ -18,14 +20,11 @@ import {
 } from 'react-native';
 
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
+
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -33,43 +32,29 @@ const App = () => {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
           <View style={styles.body}>
-            <View>
-              <AnimatedCircle fill = {0.9}>
+            <View style = {styles.item}>
+              <Text>Circle</Text>
+              <Circle progress = {0.3}></Circle>
+            </View>
+            <View style = {styles.item}>
+              <Text>AnimatedCircle</Text>
+              <AnimatedCircle progress = {0.9}
+                  radius = {60}
+                  strokeWidth = {12}
+                  duration = {2500}
+                  strokeColor= "#4D47DD">
               </AnimatedCircle>
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One2</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
+            <View style = {styles.item}>
+              <Text>CircleProgress</Text>
+              <CircleProgress progress = {0.8}
+                  radius = {80}
+                  strokeWidth = {20}
+                  strokeColor= "#2D578D"
+                  fontSize = {30}>
+              ></CircleProgress>
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -81,39 +66,14 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
   body: {
     backgroundColor: Colors.white,
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  item: {
+    flex: 1,
+    alignItems: 'center',
+    marginVertical: 30,
+  }
 });
 
 export default App;
