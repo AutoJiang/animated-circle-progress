@@ -40,12 +40,14 @@ Configuration
 |  easing     | function |  Easing.ease    | Animation easing function |
 
 博客内容：
-
+-
 ART是React Naive下的绘图框架。
 
 Android项目默认就包含ART库，而iOS需要单独添加依赖库。
+
 方式一：
 ----
+
 1.右键点击项目 -> ‘Add Files to ProjectName -> 选择 node_modules/react-native/React/Libraries/ART/ART.xcodeproj’
 
 2.将 libART.a 添加到 Linked Frameworks and Libraries。
@@ -53,6 +55,7 @@ Android项目默认就包含ART库，而iOS需要单独添加依赖库。
 方式二：
 ----
 cocoapods方式引入：
+
  pod 'React-ART', :path => '../node_modules/react-native/Libraries/ART'
 
 ART具体使用：[官方文档](https://github.com/react-native-china/react-native-ART-doc/blob/master/doc.md)
